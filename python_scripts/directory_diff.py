@@ -28,4 +28,8 @@ for directory, directory_names, file_names in os.walk(sys.argv[2]):
 
 for file in dir1:
     if (not (file in dir2)):
-        print(file)
+        print("+{}".format(file))
+
+for file in dir2:
+    if (not (file in dir1)):
+        print("-{}".format(file))
