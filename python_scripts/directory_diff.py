@@ -20,11 +20,13 @@ dir2 = set()
 
 for directory, directory_names, file_names in os.walk(sys.argv[1]):
     for file_name in file_names:
-        dir1.add(file_name)
+        print("{}\\{}".format(directory, file_name).replace(sys.argv[1], ""))
+        dir1.add("{}\\{}".format(directory, file_name).replace(sys.argv[1], ""))
 
 for directory, directory_names, file_names in os.walk(sys.argv[2]):
     for file_name in file_names:
-        dir2.add(file_name)
+        print("{}\\{}".format(directory, file_name).replace(sys.argv[2], ""))
+        dir2.add("{}\\{}".format(directory, file_name).replace(sys.argv[2], ""))
 
 for file in dir1:
     if (not (file in dir2)):
